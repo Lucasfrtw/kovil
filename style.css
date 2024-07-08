@@ -1,0 +1,98 @@
+:root {
+    --primary-bg-color: #f8f9fa;
+    --text-color: #343a40;
+    --navbar-padding: 0.5rem 20rem;
+    --spacing-l: 2rem 20rem;
+    --logo-height: 3em;
+    --nav-link-margin-right: 2rem;
+    --theme-toggle-border: none;
+    --theme-toggle-bg: none;
+    --dark-theme-bg-color: #1c1c1c;
+    --dark-theme-text-color: #f8f9fa;
+    --dark-theme-navbar-bg-color: #151515;
+    --primary-color: #007bff;
+    --hover-color: #0056b3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+}
+section{
+    padding: var(--spacing-l);
+}
+.navbar {
+    padding: var(--navbar-padding);
+    background-color: var(--primary-bg-color);
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    height: var(--logo-height);
+}
+
+.nav-link {
+    margin-right: var(--nav-link-margin-right);
+    position: relative;
+    color: var(--text-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: -4px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+#theme-toggle {
+    border: var(--theme-toggle-border);
+    border-radius: 50%;
+    background: var(--theme-toggle-bg);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#theme-toggle.rotate-animation {
+    animation: rotate 0.5s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body.dark-theme {
+    background-color: var(--dark-theme-bg-color);
+    color: var(--dark-theme-text-color);
+}
+
+body.dark-theme .navbar {
+    background-color: var(--dark-theme-navbar-bg-color);
+}
+
+body.dark-theme .nav-link {
+    color: var(--dark-theme-text-color);
+}
+
+body.dark-theme .nav-link::after {
+    background-color: var(--hover-color);
+}
+
+#theme-toggle.moon-active {
+    background-color: var(--primary-bg-color);
+}
