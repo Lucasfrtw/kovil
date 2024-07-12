@@ -19,3 +19,15 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     document.getElementById('theme-toggle').classList.toggle('rotate-animation');
     document.getElementById('theme-toggle').classList.toggle('moon-active');
 });
+
+//hamburguer
+var menubtn = document.getElementById('header-btn');
+var menu = document.getElementById('div-menu');
+
+menubtn.addEventListener("click", function() {
+    if (menu.style.display === "block") {
+        menu.style.display = "none"
+    }else{
+        menu.style.display = "block"
+    }
+});

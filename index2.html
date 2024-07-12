@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    #menu-btn{
+        width: 45px;
+        height: 45px;
+        background-color: transparent;
+        border-color: transparent;
+        color: white;
+        font-size: 30px;
+        padding: 0px 0px 5px 0px;
+    }
+    #menu-btn:hover{
+        cursor: pointer;
+        border-color: white;
+    }
+    #menu-btn:active{
+        background-color: white;
+
+    }
+    #menu{
+        display: none;
+        flex-direction: column;
+        background-color: rgba(137, 43, 226, 0.637);
+        position: absolute;
+        justify-content: flex-end;
+        padding: 10px 0px 0px 55px;
+        font-size: 25px;
+        color: white;
+        list-style: none;
+        text-decoration: none;
+        width: 200px;
+        height: 100%;
+        z-index: 0;
+    }
+    #menu:ul{
+        list-style: none;
+    }
+    .header{
+        background-color: blue;
+        width: 100%;
+        height: 4em;
+        justify-content: flex-start;
+        padding: 10px 0px 0px 10px;
+        display: flex;
+    }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="menu-roxo">
+        <div class="header">
+            <button id="menu-btn">&#9776;</button>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="#">Opção 1</a></li>
+                <li><a href="#">Opção 2</a></li>
+                <li><a href="#">Opção 3</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    <script>
+        var menubtn = document.getElementById("menu-btn");
+        var menu = document.getElementById("menu");
+
+        menubtn.addEventListener("click", function() {
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
